@@ -1,6 +1,6 @@
 # locreq
 
-`locreq` is an answer to the problem of [requiring local paths in Node.js](https://gist.github.com/branneman/8048520). It allows you to easiily require modules from your project, without worrying about realtive paths.
+`locreq` is an answer to the problem of [requiring local paths in Node.js](https://gist.github.com/branneman/8048520). It allows you to easily require modules from your project, without worrying about relative paths.
 
 Assume the following directory structure:
 
@@ -35,6 +35,28 @@ require("lib/collectionA/moduleA2.js");
 
 If you have lots of dependencies, `locreq` can really make a difference.
 
+## Installation & usage
+
+To install `locreq`, use:
+
+```
+npm install --save locreq
+```
+
+To use the module, require it like so:
+
+```
+const locreq = require("locreq")(__dirname);
+```
+
+The `(__dirname);` part is very important, don't forget it!
+
+Next, simply use `locreq` instead of `require` for your local modules, giving a path relative to the root of your package (that is, relative to the directory where the `package.json` of your project is):
+
+```
+var moduleA = require("lib/my-modules/moduleA.js");
+```
+
 ## How does it work?
 
 1. `locreq` goes up the directory hierarchy, parent directory by parent directory
@@ -46,5 +68,5 @@ If you have lots of dependencies, `locreq` can really make a difference.
 * **it works even if your package is `require`d by a different package (which is not the case for the `require.main.require` trick)**;
 * it doesn't mess with the global scope;
 * it doesn't need changes in environment variables;
-* it doesn't need any additional startup scripts;
-* it doesn't overwrite the default `require` behaviour.
+* it doesn't need any additional start-up scripts;
+* it doesn't overwrite the default `require` behavior.
