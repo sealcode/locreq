@@ -1,11 +1,26 @@
 {
   "name": "locreq",
   "version": "1.0.0",
-  "description": "",
+  "description": "Require local modules without all that \"../../../\" BS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Kuba Orlik (kontakt@jakub-orlik.pl)",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sealcode/locreq.git"
+  },
+  "keywords": [
+    "local",
+    "require",
+    "path"
+  ],
+  "bugs": {
+    "url": "https://github.com/sealcode/locreq/issues"
+  },
+  "homepage": "https://github.com/sealcode/locreq#readme"
 }
