@@ -1,6 +1,6 @@
 {
   "name": "locreq",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Require local modules without all that \"../../../\" BS",
   "main": "index.js",
   "scripts": {
