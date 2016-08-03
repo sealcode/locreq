@@ -16,7 +16,7 @@ Assume the following directory structure:
 
 Now, to require module `A2.js` from module `B1a.js`, using regular `require`:
 
-```
+```javascript
 require("../../collectionA/moduleA2.js");
 ```
 
@@ -28,7 +28,7 @@ There are a few problems with the above example:
 
 With `locreq`, it's easier:
 
-```
+```javascript
 const locreq = require("locreq")(__dirname);
 require("lib/collectionA/moduleA2.js");
 ```
