@@ -1,6 +1,6 @@
 # locreq
 
-`locreq` is an answer to the problem of [requiring local paths in Node.js](https://gist.github.com/branneman/8048520). It allows you to easily require modules from your project, without worrying about relative paths.
+`locreq` is an answer to the problem of [requiring local paths in Node.js](https://gist.github.com/branneman/8048520). It allows you to easily require modules by specifying their paths relative to your project root, not relative to the file they're `require`d from.
 
 Assume the following directory structure:
 
