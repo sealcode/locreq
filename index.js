@@ -12,11 +12,16 @@ function fileExists(filePath) {
 };
 
 function search_for_file_upwards(start, filename){
-	let current_path = path.resolve(start, "./" + filename)
-	while(!fileExists(current_path)){
-		current_path = path.resolve(current_path, "../../" + filename);
+	let current_dir = start;
+	let file_path = path.resolve(current_dir, filename);
+	while(!fileExists(file_path)){
+		if(current_dir == "/"){
+			throw new Error("Could not find '" + filename + "' in any of the parent directories.");
+		}
+		current_dir = path.resolve(current_dir, "../");
+		file_path = path.resolve(current_dir, filename);
 	}
-	return current_path;
+	return file_path;
 };
 
 function locreq(caller_path, module_path){
