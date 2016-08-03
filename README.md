@@ -45,7 +45,7 @@ npm install --save locreq
 
 To use the module, require it like so:
 
-```
+```javascript
 const locreq = require("locreq")(__dirname);
 ```
 
@@ -53,7 +53,7 @@ The `(__dirname);` part is very important, don't forget it!
 
 Next, simply use `locreq` instead of `require` for your local modules, giving a path relative to the root of your package (that is, relative to the directory where the `package.json` of your project is):
 
-```
+```javascript
 var moduleA = require("lib/my-modules/moduleA.js");
 ```
 
