@@ -30,7 +30,7 @@ With `locreq`, it's easier:
 
 ```javascript
 const locreq = require("locreq")(__dirname);
-require("lib/collectionA/moduleA2.js");
+locreq("lib/collectionA/moduleA2.js");
 ```
 
 If you have lots of dependencies, `locreq` can really make a difference.
@@ -54,7 +54,7 @@ The `(__dirname);` part is very important, don't forget it!
 Next, simply use `locreq` instead of `require` for your local modules, giving a path relative to the root of your package (that is, relative to the directory where the `package.json` of your project is):
 
 ```javascript
-var moduleA = require("lib/my-modules/moduleA.js");
+var moduleA = locreq("lib/my-modules/moduleA.js");
 ```
 
 ## How does it work?
