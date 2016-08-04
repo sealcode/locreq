@@ -1,7 +1,7 @@
 {
   "name": "locreq",
   "version": "1.0.6",
-  "description": "Require local modules without all that \"../../../\" BS",
+  "description": "Require local modules without all that '../../../' BS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
