@@ -57,6 +57,12 @@ Next, simply use `locreq` instead of `require` for your local modules, giving a 
 var moduleA = locreq("lib/my-modules/moduleA.js");
 ```
 
+Similar to regular `require`, you can also use the `locreq.resolve` method:
+
+```
+const module_path = locreq.resolve("lib/my-modules/moduleA.js"); //returns the absolute path to the module
+```
+
 ## How does it work?
 
 1. `locreq` goes up the directory hierarchy, parent directory by parent directory

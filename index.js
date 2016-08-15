@@ -24,16 +24,25 @@ function search_for_file_upwards(start, filename){
 	return file_path;
 };
 
-function locreq(caller_path, module_path){
+function locreq_resolve(caller_path, module_path){
 	const package_path = search_for_file_upwards(caller_path, "package.json");
-	const to_require = path.resolve(package_path, "../", module_path);
-	return require(to_require);
+	return path.resolve(package_path, "../", module_path);
+}
+
+function locreq(caller_path, module_path){
+	return require(locreq_resolve(caller_path, module_path));
 };
 
 function curry_locreq(caller_path){
-	return function(module_path){
+	let curried = function(module_path){
 		return locreq(caller_path, module_path);
 	};
+	
+	curried.resolve = function(module_path){
+		return locreq_resolve(caller_path, module_path);
+	}
+
+	return curried;
 };
 
 module.exports = curry_locreq;
