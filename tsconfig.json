@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "target": "ES2020",
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["es6", "esnext"],
+    "outDir": "lib",
+    "checkJs": true,
+    "allowJs": true,
+    "declarationDir": "@types",
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"]
+}
