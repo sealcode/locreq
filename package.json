@@ -1,6 +1,6 @@
 {
 	"name": "locreq",
-	"version": "1.1.0",
+	"version": "2.0.0",
 	"description": "Require local modules without all that '../../../' BS",
 	"main": "lib/index.js",
 	"scripts": {
@@ -18,7 +18,11 @@
 		"type": "git",
 		"url": "git+https://github.com/sealcode/locreq.git"
 	},
-	"keywords": ["local", "require", "path"],
+	"keywords": [
+		"local",
+		"require",
+		"path"
+	],
 	"bugs": {
 		"url": "https://github.com/sealcode/locreq/issues"
 	},
