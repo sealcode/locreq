@@ -38,7 +38,7 @@ function locreq(caller_path: string, module_path: string) {
 function curry_locreq(caller_path: string) {
 	let curried: {
 		(module_path: string): any;
-		resolve: (module_path: string) => any;
+		resolve: (module_path: string) => string;
 	} = (() => {
 		const f = function (module_path: string) {
 			return locreq(caller_path, module_path);
