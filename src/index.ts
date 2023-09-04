@@ -31,13 +31,13 @@ function locreq_resolve(caller_path: string, module_path: string) {
 	return path.resolve(package_path, "../", module_path);
 }
 
-function locreq(caller_path: string, module_path: string) {
+function locreq(caller_path: string, module_path: string): unknown {
 	return require(locreq_resolve(caller_path, module_path));
 }
 
 function curry_locreq(caller_path: string) {
 	let curried: {
-		(module_path: string): any;
+		(module_path: string): unknown;
 		resolve: (module_path: string) => string;
 	} = (() => {
 		const f = function (module_path: string) {
