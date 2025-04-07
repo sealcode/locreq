@@ -17,7 +17,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"@types/node": "^14.14.16",
-		"esbuild": "0.14.10",
+		"esbuild": "0.25.0",
 		"tiny-glob": "0.2.9",
 		"ts-node": "^10.9.2",
 		"typescript": "5.5"
