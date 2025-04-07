@@ -72,11 +72,13 @@ async function locreq(
 	caller_path: string,
 	module_path: string
 ): Promise<unknown> {
-	return require(await locreq_resolve(caller_path, module_path));
+	const resolvedPath = await locreq_resolve(caller_path, module_path);
+	return import(resolvedPath);
 }
 
 function locreq_sync(caller_path: string, module_path: string): unknown {
-	return require(locreq_resolve_sync(caller_path, module_path));
+	const resolvedPath = locreq_resolve_sync(caller_path, module_path);
+	return import(resolvedPath);
 }
 
 function curry_locreq(caller_path: string) {

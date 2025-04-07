@@ -2,16 +2,24 @@
 	"name": "locreq",
 	"version": "2.1.0",
 	"description": "Require local modules without all that '../../../' BS",
-	"main": "lib/index.js",
+	"main": "lib/src/index.js",
 	"scripts": {
-		"build": "tsc",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "node ./esbuild.cjs",
+		"prepare": "rm -rf @types && npm run typecheck && npm run build-declarations && npm run build",
+		"build-declarations": "tsc --emitDeclarationOnly",
+		"typecheck": "tsc --noemit"
 	},
+	"prepare": "npm run build",
+	"type": "module",
+	
 	"types": "./@types/index.d.ts",
 	"author": "Kuba Orlik (kontakt@jakub-orlik.pl)",
 	"license": "ISC",
 	"dependencies": {
 		"@types/node": "^14.14.16",
+		"esbuild": "0.14.10",
+		"tiny-glob": "0.2.9",
+		"ts-node": "^10.9.2",
 		"typescript": "5.5"
 	},
 	"repository": {
